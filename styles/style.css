@@ -6,6 +6,7 @@
     --color-secundario: #0A3871;
     --color-terciario: #495057;
     --color-quarto: #CACACA;
+    --color-hover: #C7DEFA;
 
 }
 
@@ -86,6 +87,10 @@ body{
     
 }
 
+.principal__capturar__boton:hover{
+    background-color: var(--color-hover);
+}
+
 #encriptar {
     background-color: var(--color-secundario);
     color:var(--color-primario);
@@ -149,6 +154,10 @@ body{
     justify-content: center;
     border-radius: 24%;
     padding: 0% 0% 5% 0%;
+}
+
+.resultado__boton:hover{
+    background-color: var(--color-hover);
 }
 
 .resultado__boton{
