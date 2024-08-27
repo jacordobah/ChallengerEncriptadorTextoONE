@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/app.js"></script>
+    <title>Encriptador De Texto</title>
+</head>
+<body>
+    <header class="cabecera"><img class="cabecera_img" src="assets/logoAlura.png" alt=""></header>
+    <main class="principal">
+        <section class="principal__capturar">  
+            <h1 class="principal__capturar__titulo">Encriptador de texto
+                <strong class="titulo-resaltado">GRATIS!
+            </strong></h1>
+    
+            
+                <input type="text" class="principal__capturar__input--text"  placeholder="Ingrese el texto aqui" id="capturarTexto"
+                pattern="[a-z]"
+                onkeypress="return (event.charCode <= 122 && event.charCode >= 97)"; onclick.thisvalu=""; onkeyup="javascript:this.value=this.value.toLowerCase();"></input>
+     
+
+            <p class="principal__capturar__advertencia">
+                <img class="principal__capturar__advertencia--img" src="./assets/advertencia.png"> Solo letras minusculas y sin acentos
+            </p>
+            <div class="principal__capturar__botones">
+                <button class="principal__capturar__boton" id="encriptar" onclick="encriptar();" >Encriptar</button>
+                <button class="principal__capturar__boton" id="desencriptar" onclick="desencriptar()">Desencriptar</button>
+            </div>
+        </section>
+        <div class="principal__resultado">
+            <div class="principal__resultado__img" >
+                <img  id="imgEncriptado"  src="assets/encriptado.png" alt="descifralo">
+            </div>
+            <p class="resultado__noEncontrado" id="pResultadoNoEncontrado" ><strong>Ningún mensaje fue encontrado</strong></p>
+            <p class="resultado__sugerencia" id="pResultadoSugerencia">Ingresa el texto que desees encriptar o desencriptar.</p>
+            <p class="resultado_encriptado"  id="pResultadoEncriptado" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio perferendis est accusamus blanditiis modi tempore excepturi dignissimos ipsum fugiat id quisquam, a, sapiente illo commodi at exercitationem assumenda necessitatibus nisi?</p>
+            <div class="principal__resultado__boton" id="divBotonCopiar">
+                <button class="resultado__boton" id="copiar" onclick="copiar();">Copiar texto</button>
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">desarrolado por: Jose A. Cordoba. 2024 - grupo ONE 7</footer>
+</body>
+</html>
