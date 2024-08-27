@@ -1,5 +1,5 @@
 /*codigo asccii a: 97  z:122 */
-let palabraEncriptada;
+let palabraMostar;
 
 function validarCaracteres(tEvent){
     var t = new Boolean(true);
@@ -9,6 +9,31 @@ function validarCaracteres(tEvent){
     }
     return
 }
+
+function encriptar(){
+    let palabra = document.getElementById("capturarTexto").value
+    let lista=[];
+    for(let i = 0; i < palabra.length; i++){
+        lista[i]=palabra[i];
+        let codigo = lista[i].charCodeAt(0);
+        switch(palabra[i]){
+            case ('a'): lista[i] = "ai";
+                        break;
+            case ('e'): lista[i] = "enter";
+                        break;
+            case ('i'): lista[i] = "imes";
+                        break;
+            case ('o'): lista[i] = "ober";
+                        break;
+            case ('u'): lista[i] = "ufat";
+                        break;
+            default: break;
+        }
+    }
+    palabraMostar = lista.join("");
+    mostrarPalabraEncriptada();
+}
+/*
 
 function encriptar(){
     let palabra = document.getElementById("capturarTexto").value
@@ -28,33 +53,44 @@ function encriptar(){
         }
 
     }
-    console.log(lista);
     lista.reverse();
     palabraEncriptada = lista.join("");
     palabraEncriptada.replace(",","");
-    console.log(palabraEncriptada);
     mostrarPalabraEncriptada();
     return 1;
-}
+}*/
 
 function mostrarPalabraEncriptada(){
     document.getElementById("imgEncriptado").style.display = "none";
     document.getElementById("pResultadoNoEncontrado").style.display = "none";
     document.getElementById("pResultadoSugerencia").style.display = "none";
     document.getElementById("divBotonCopiar").style.display="flex";
-    console.log(palabraEncriptada);
     document.getElementById("pResultadoEncriptado").style.display = "block";
-    document.getElementById("pResultadoEncriptado").innerHTML = palabraEncriptada;
-   
-   /* mostrar.style.visibility = "visible";
-    mostrar.innerHTML = palabraEncriptada;*/
+    document.getElementById("pResultadoEncriptado").innerHTML = palabraMostar;
 }
 
 function copiar(){
-    navigator.clipboard.writeText(palabraEncriptada);
+    navigator.clipboard.writeText(palabraMostar);
     alert("texto Copiado");
+    document.getElementById("capturarTexto").value = "";
+    document.getElementById("capturarTexto").focus;
 }
 
+function desencriptar(){
+    const palabra = document.getElementById("capturarTexto").value
+    let desencpitaa = palabra.replaceAll('ai','a');
+    console.log("1",desencpitaa);
+    let desencriptae = desencpitaa.replaceAll("enter","e");
+    let desencriptai = desencriptae.replaceAll("imes","i");
+    let desencriptao = desencriptai.replaceAll("ober","o");
+    let desencriptau = desencriptao.replaceAll("ufat","u");
+    palabraMostar = desencriptau;
+    mostrarPalabraEncriptada();
+
+}
+
+
+/*
 function desencriptar(){
     //funcion desencripar
     let palabra = document.getElementById("capturarTexto").value
@@ -80,8 +116,4 @@ function desencriptar(){
     console.log(palabraEncriptada);
     mostrarPalabraEncriptada();
     return 1;
-}
-
-/*<textarea class="principal__capturar__input--text"  placeholder="Ingrese el texto aqui" id="capturarTexto"
-            onkeypress="validarCaracteres(event);"; onclick.thisvalu=""; onkeyup="javascript:this.value=this.value.toLowerCase();"></textarea>
-  */
+}*/
